@@ -61,13 +61,55 @@
             
         }
 
+        
+        let wincount = 0
 
 
 
-        let compChoice = computer_Choice() 
-        let userChoice = user_Choice()
 
-        console.log(compChoice, userChoice)
+
+
+
+        function compare_Choices() {
+
+            let x = user_Choice()
+            let y = computer_Choice()
+            
+            
+
+            if (x == "Rock" && y == "Paper"  || x == "Paper" && y == "Scissors" || x == "Scissors" && y == "Rock" ) {
+               
+                wincount = ++wincount
+                console.log(`You lost, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
+               
+
+            } else if (x == "Rock" && y == "Scissors"  || x == "Paper" && y == "Rock" || x == "Scissors" && y == "Paper" ) {
+                
+                wincount = ++wincount
+                console.log(`You won, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
+                
+
+            } else if (x == "Rock" && y == "Rock"  || x == "Paper" && y == "Paper" || x == "Scissors" && y == "Scissors" ) {
+                
+                wincount = ++wincount
+                console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
+
+
+            } else {
+
+                console.log(`Something is wrong!!!, you choice was ${x}, the computer ${y}.`)
+
+            }
+
+        }
+
+        
+        compare_Choices()
+
+
+        
+
+        
         
 
 
