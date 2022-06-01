@@ -33,7 +33,7 @@
 
         function user_Choice() {
 
-            let y = Number(prompt("Choose one 1 - Paper, 2 - Rock, 3 - Scissors, 5 - to stop"))
+            let y = Number(prompt("Choose one 1 - Paper, 2 - Rock, 3 - Scissors"))
 
                 switch(y) {
 
@@ -79,7 +79,7 @@
 
             if (x == "Rock" && y == "Paper"  || x == "Paper" && y == "Scissors" || x == "Scissors" && y == "Rock" ) {
                
-                wincount = ++wincount
+                
                 console.log(`You lost, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
                
 
@@ -91,20 +91,25 @@
 
             } else if (x == "Rock" && y == "Rock"  || x == "Paper" && y == "Paper" || x == "Scissors" && y == "Scissors" ) {
                 
-                wincount = ++wincount
+                
                 console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
 
 
             } else {
 
-                console.log(`Something is wrong!!!, you choice was ${x}, the computer ${y}.`)
+                compare_Choices()
 
             }
 
         }
 
+        let c = Number(prompt("Choose 1 to play, 2 to stop."))
         
+        while (c==1) {
+
         compare_Choices()
+        c = Number(prompt("Choose 1 to play again, 2 to stop."))
+        }
 
 
         
