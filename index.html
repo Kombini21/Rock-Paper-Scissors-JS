@@ -31,7 +31,43 @@
             
         }
 
-        comp_Choice = computer_Choice() 
+        function user_Choice() {
+
+            let y = Number(prompt("Choose one 1 - Paper, 2 - Rock, 3 - Scissors, 5 - to stop"))
+
+                switch(y) {
+
+                    case 1:
+                        return "Paper"
+                        break;
+                    
+                    case 2:
+                        return "Rock"
+                        break;
+
+                    case 3:
+                        return "Scissors"
+                        break;
+
+                    case 5:
+                        break;
+
+                    default:
+                        console.log("Choose again between 1 and 3.");
+                        user_Choice()
+                        break;
+                }
+
+            
+        }
+
+
+
+
+        let compChoice = computer_Choice() 
+        let userChoice = user_Choice()
+
+        console.log(compChoice, userChoice)
         
 
 
