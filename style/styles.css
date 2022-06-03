@@ -1,0 +1,28 @@
+
+.samu{
+
+    border: 1px solid red;
+    height: 50vh;
+
+
+
+
+}
+
+
+
+.btt{
+
+    border: 1px solid red;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.foot{
+
+    text-align: center;
+}
