@@ -8,6 +8,19 @@
 </head>
 <body>
 
+
+    <div id="moving">
+
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+
+    </div>
+
+    
+
+
+
     <script>
 
         function computer_Choice() {
@@ -31,52 +44,36 @@
             
         }
 
-        function user_Choice() {
-
-            let y = Number(prompt("Choose one 1 - Paper, 2 - Rock, 3 - Scissors"))
+        function user_Choice(y) {
 
                 switch(y) {
 
                     case 1:
-                        return "Paper"
+                        
+                        return "Paper" 
                         break;
                     
                     case 2:
-                        return "Rock"
+                        
+                        return "Rock" 
                         break;
 
                     case 3:
+                        
                         return "Scissors"
                         break;
 
-                    case 5:
-                        break;
-
                     default:
-                        console.log("Choose again between 1 and 3.");
-                        user_Choice()
                         break;
                 }
 
             
         }
 
-        
-        let wincount = 0
+    
+        function compare_Choices(x,y) {
 
-
-
-
-
-
-
-        function compare_Choices() {
-
-            let x = user_Choice()
-            let y = computer_Choice()
             
-            
-
             if (x == "Rock" && y == "Paper"  || x == "Paper" && y == "Scissors" || x == "Scissors" && y == "Rock" ) {
                
                 
@@ -95,35 +92,64 @@
                 console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
 
 
-            } else {
-
-                compare_Choices()
-
             }
-
-        }
-
-        let c = Number(prompt("Choose 1 to play, 2 to stop."))
-        
-        while (c==1) {
-
-        compare_Choices()
-        c = Number(prompt("Choose 1 to play again, 2 to stop."))
         }
 
 
+
+
+
         
 
+            let wincount = 0
+
+            const wrapper = document.getElementById('moving');
+
+            wrapper.addEventListener('click', (event) => {
+
+                const isButton = event.target.nodeName === 'BUTTON';
+                if (!isButton) {
+                    return;
+                }
+                let useruChoice = 0;
+                let usuChoice = event.target.id;
+                if (usuChoice == 'rock') {
+                    
+                    useruChoice = 2;
+                }else if (usuChoice == 'paper') {
+
+                    useruChoice = 1;
+                }else if (usuChoice == 'scissors') {
+
+                    useruChoice = 3;
+                }
+
+                uzu = user_Choice(useruChoice)
+                cpzu = computer_Choice()
+
+                compare_Choices(uzu, cpzu)
+
+                if (wincount == 5) {
+                    wincount = 0 
+                }
+
+                
+
+
+
+            })
+
+
+
+
+
+      
+
+
         
-        
-
-
-
-
 
 
     </script>
-
 
     
 </body>
