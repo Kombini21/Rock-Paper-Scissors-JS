@@ -1,28 +1,60 @@
 
+
 .samu{
 
+
+
     border: 1px solid red;
-    height: 50vh;
-
-
-
-
+    height: 55vh;
 }
-
 
 
 .btt{
 
+
+
     border: 1px solid red;
-    height: 40vh;
+    height: 35vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start ;
+    gap: 200px;
     
 }
 
 
 .foot{
 
+
+    border: 1px solid red;
+    height: auto;       /* mudar pra pagina ficar só 1 */
     text-align: center;
+}
+
+body {
+
+
+
+    background-color: rgb(143, 143, 255);
+}
+
+
+.rock{
+
+background-image: ""
+
+}
+
+
+.paper{
+
+
+
+}
+
+
+.scissors{
+
+
+
 }
