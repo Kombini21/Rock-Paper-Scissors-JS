@@ -234,3 +234,53 @@ background-color: #2d242400;
 
     background-image: url('../images/plscissors.png');
 }
+
+@media only screen and (max-width: 740px) {
+
+
+    .showing-images{
+
+        gap:8px;
+    }
+
+    .header-w{
+
+        font-size: 34px;
+    }
+
+    .btt{
+
+        gap: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    #rock,
+    #paper,
+    #scissors{
+
+        height: 0;
+        width: 0;
+        height: 130px;
+        width: 130px;
+        margin-right: 0;
+        
+
+
+    }
+
+    .foot{
+
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    #rock:hover,
+    #paper:hover,
+    #scissors:hover{
+
+        height: 133px;
+        width: 133px;
+}
+}
