@@ -138,6 +138,12 @@ function compare_Choices(x,y) {
     const imgUser1 = document.getElementById('imgUser');
     const imgPc1 = document.getElementById('imgPc');
 
+
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    const modalTxt = document.getElementById("modalTexuto");
+
     wrapper.addEventListener('click', (event) => {
 
         const isButton = event.target.nodeName === 'BUTTON';
@@ -164,10 +170,47 @@ function compare_Choices(x,y) {
 
         if (wincount == 5 || winCountPC == 5 ) {
 
+            if (wincount == 5) {
+
+
+                modal.style.display = "block";
+                span.onclick = function() {
+                    modal.style.display = "none";
+                  }
+                
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+
+                modalTxt.innerHTML = " Você ganhou!!";
+
+            } else if (winCountPC == 5) { 
+
+
+                modal.style.display = "block";
+                span.onclick = function() {
+                    modal.style.display = "none";
+                  }
+                
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+
+                modalTxt.innerHTML = " Você perdeu!!";
+
+
+
+            }
+
             wincount = 0;
             winCountPC = 0;
             pcCore.innerHTML = `Score da máquina: ${winCountPC}`;
             userCore.innerHTML = `Score do jogador: ${wincount}`;
+            
             
         }
 
