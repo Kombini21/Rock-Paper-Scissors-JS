@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra Papel Tesoura</title>
     <link rel="stylesheet" href="./style/styles.css">
+    <script src="./scripts.js" defer></script>
 </head>
 <body>
     
     <div class="head">
 
-        <div class="header-w">PEDRA PAPEL TESOURA</div>
+        <div class="header-w">Pedra Papel Tesoura</div>
 
 
     </div>
@@ -22,25 +23,25 @@
             
             <div class="showing-head">
 
-                <h2 class="showing-head-1" id="showinghead1"> It's a something!</h2>
+                <h2 class="showing-head-1" id="showingHead1"> Esteja pronto para enfrentar a máquina!</h2>
             </div>
 
-            <div class="showing-writing"> Something ties with something.</div>
+            <div class="showing-writing" id="showingWrinting"> Quem alcançar 5 pontos ganha a partida</div>
 
 
             <div class="showing-images">
 
                 <div class="choice1">
 
-                    <div class="choice1-image1"></div>
-                    <div class="choice1-score1">Player score: 0</div>
+                    <div class="choice1-image1" id="imgUser"></div>
+                    <div class="choice1-score1" id="playerScore">Score do jogador: 0</div>
 
                 </div>
 
                 <div class="choice2">
 
-                    <div class="choice2-image2"></div>
-                    <div class="choice2-score2">Computer score: 0</div>
+                    <div class="choice2-image2" id="imgPc"></div>
+                    <div class="choice2-score2" id="computerScore">Score da máquina: 0</div>
 
 
                 </div>

@@ -6,15 +6,15 @@ function computer_Choice() {
     switch(x) {
 
         case 1:
-            return "Paper"
+            return "papel"
             break;
                 
         case 2:
-            return "Rock"
+            return "pedra"
             break;
 
         case 3:
-            return "Scissors"
+            return "tesoura"
             break;
     }
             
@@ -26,17 +26,17 @@ function user_Choice(y) {
 
             case 1:
                         
-                return "Paper" 
+                return "papel" 
                 break;
                     
             case 2:
                         
-                return "Rock" 
+                return "pedra" 
                 break;
 
             case 3:
                         
-                return "Scissors"
+                return "tesoura"
                 break;
 
             default:
@@ -46,29 +46,77 @@ function user_Choice(y) {
             
 }
 
+function return_Userimage(x){
+
+    if (x == "pedra") {
+
+        imgUser1.style.backgroundImage = "url('./images/plrock.png')";  
+    }else if ( x == "papel") {
+
+        imgUser1.style.backgroundImage = "url('./images/plpaper.png')";  
+    }else if ( x == "tesoura") {
+
+        imgUser1.style.backgroundImage = "url('./images/plscissors.png')";  
+    }
+
+}
+
+function return_pcImage(y){
+
+    if (y == "pedra") {
+
+        imgPc1.style.backgroundImage = "url('./images/plrock.png')";  
+    }else if ( y == "papel") {
+
+        imgPc1.style.backgroundImage = "url('./images/plpaper.png')";  
+    }else if ( y == "tesoura") {
+
+        imgPc1.style.backgroundImage = "url('./images/plscissors.png')";  
+    }
+
+}
     
 function compare_Choices(x,y) {
 
             
-    if (x == "Rock" && y == "Paper"  || x == "Paper" && y == "Scissors" || x == "Scissors" && y == "Rock" ) {
+    if (x == "pedra" && y == "papel"  || x == "papel" && y == "tesoura" || x == "tesoura" && y == "pedra" ) {
                
                 
-        console.log(`You lost, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
-        showHead.innerHTML = "class"
+        console.log(`You lost, you choice was ${x}, the computer ${y}, you won ${wincount} times.`);
+        winCountPC = ++winCountPC;
+        showHead.innerHTML = "Você perdeu!";
+        showWright.innerHTML = `Você escolheu ${x}, o computador ${y}`;
+        pcCore.innerHTML = `Score da máquina: ${winCountPC}`;
+        return_Userimage(x)
+        return_pcImage(y)
+        
+        
+        
         
                
 
-    } else if (x == "Rock" && y == "Scissors"  || x == "Paper" && y == "Rock" || x == "Scissors" && y == "Paper" ) {
+    } else if (x == "pedra" && y == "tesoura"  || x == "papel" && y == "pedra" || x == "tesoura" && y == "papel" ) {
                 
-        wincount = ++wincount
-        console.log(`You won, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
+        wincount = ++wincount;
+        console.log(`You won, you choice was ${x}, the computer ${y}, you won ${wincount} times.`);
+        showHead.innerHTML = "Você ganhou!";
+        showWright.innerHTML = `Você escolheu ${x}, o computador ${y}`;
+        userCore.innerHTML = `Score do jogador: ${wincount}`;
+        return_Userimage(x)
+        return_pcImage(y)
+        
                 
 
-    } else if (x == "Rock" && y == "Rock"  || x == "Paper" && y == "Paper" || x == "Scissors" && y == "Scissors" ) {
+    } else if (x == "pedra" && y == "pedra"  || x == "papel" && y == "papel" || x == "tesoura" && y == "tesoura" ) {
                 
                 
-        console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
-
+        console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`);
+        showHead.innerHTML = "Você empatou!";
+        showWright.innerHTML = `Você escolheu ${x}, o computador ${y}`;
+        return_Userimage(x)
+        return_pcImage(y)
+        
+        
 
     }
 }
@@ -79,10 +127,16 @@ function compare_Choices(x,y) {
 
 
 
-let wincount = 0
+    let wincount = 0
+    let winCountPC = 0
 
     const wrapper = document.getElementById('moving');
-    const showHead = document.getElementById('showinghead1');
+    const showHead = document.getElementById('showingHead1');
+    const showWright = document.getElementById('showingWrinting');
+    const userCore = document.getElementById('playerScore');
+    const pcCore = document.getElementById('computerScore');
+    const imgUser1 = document.getElementById('imgUser');
+    const imgPc1 = document.getElementById('imgPc');
 
     wrapper.addEventListener('click', (event) => {
 
@@ -108,8 +162,13 @@ let wincount = 0
 
         compare_Choices(uzu, cpzu)
 
-        if (wincount == 5) {
-            wincount = 0 
+        if (wincount == 5 || winCountPC == 5 ) {
+
+            wincount = 0;
+            winCountPC = 0;
+            pcCore.innerHTML = `Score da máquina: ${winCountPC}`;
+            userCore.innerHTML = `Score do jogador: ${wincount}`;
+            
         }
 
         })
