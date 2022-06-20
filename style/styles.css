@@ -159,6 +159,14 @@ background-color: #2d242400;
 
 }
 
+#rock:hover,
+#paper:hover,
+#scissors:hover{
+
+    height: 210px;
+    width: 210px;
+}
+
 .modal {
 
     display: none;
