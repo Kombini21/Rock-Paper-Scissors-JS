@@ -4,165 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Pedra Papel Tesoura</title>
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
     
-    <div id="spada" class="samu">
+    <div class="head">
+
+        <div class="header-w">PEDRA PAPEL TESOURA</div>
+
+
+    </div>
+
+    <div class="full-body">
+
+        <div class="choice-show">
+            
+            <div class="showing-head">
+
+                <h2 class="showing-head-1" id="showinghead1"> It's a something!</h2>
+            </div>
+
+            <div class="showing-writing"> Something ties with something.</div>
+
+
+            <div class="showing-images">
+
+                <div class="choice1">
+
+                    <div class="choice1-image1"></div>
+                    <div class="choice1-score1">Player score: 0</div>
+
+                </div>
+
+                <div class="choice2">
+
+                    <div class="choice2-image2"></div>
+                    <div class="choice2-score2">Computer score: 0</div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <div id="moving" class="btt">
+
+            <button id="rock"></button>
+            <button id="paper"></button>
+            <button id="scissors"></button>
+
+        </div>
 
 
 
     </div>
 
-    
-    <div id="moving" class="btt">
 
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-
-    </div>
 
     <div class="foot">
 
-        <p>Made by Gabriel Terrazas - kb</p>
+        <p class="foot-write">Gabriel Terrazas - Kombini21 </p>
+        
+
 
     </div>
 
     
 
-
-
-    <script>
-
-        function computer_Choice() {
-
-            let x = Math.floor(Math.random() * 3) + 1;
-            
-            switch(x) {
-
-                case 1:
-                    return "Paper"
-                    break;
-                
-                case 2:
-                    return "Rock"
-                    break;
-
-                case 3:
-                    return "Scissors"
-                    break;
-            }
-            
-        }
-
-        function user_Choice(y) {
-
-                switch(y) {
-
-                    case 1:
-                        
-                        return "Paper" 
-                        break;
-                    
-                    case 2:
-                        
-                        return "Rock" 
-                        break;
-
-                    case 3:
-                        
-                        return "Scissors"
-                        break;
-
-                    default:
-                        break;
-                }
-
-            
-        }
-
-    
-        function compare_Choices(x,y) {
-
-            
-            if (x == "Rock" && y == "Paper"  || x == "Paper" && y == "Scissors" || x == "Scissors" && y == "Rock" ) {
-               
-                
-                console.log(`You lost, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
-               
-
-            } else if (x == "Rock" && y == "Scissors"  || x == "Paper" && y == "Rock" || x == "Scissors" && y == "Paper" ) {
-                
-                wincount = ++wincount
-                console.log(`You won, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
-                
-
-            } else if (x == "Rock" && y == "Rock"  || x == "Paper" && y == "Paper" || x == "Scissors" && y == "Scissors" ) {
-                
-                
-                console.log(`Its a draw, you choice was ${x}, the computer ${y}, you won ${wincount} times.`)
-
-
-            }
-        }
-
-
-
-
-
-
-
-            let wincount = 0
-
-            const wrapper = document.getElementById('moving');
-
-            wrapper.addEventListener('click', (event) => {
-
-                const isButton = event.target.nodeName === 'BUTTON';
-                if (!isButton) {
-                    return;
-                }
-                let useruChoice = 0;
-                let usuChoice = event.target.id;
-                if (usuChoice == 'rock') {
-                    
-                    useruChoice = 2;
-                }else if (usuChoice == 'paper') {
-
-                    useruChoice = 1;
-                }else if (usuChoice == 'scissors') {
-
-                    useruChoice = 3;
-                }
-
-                uzu = user_Choice(useruChoice)
-                cpzu = computer_Choice()
-
-                compare_Choices(uzu, cpzu)
-
-                if (wincount == 5) {
-                    wincount = 0 
-                }
-
-                
-
-
-
-            })
-
-
-
-
-
-      
-
-
-        
-
-
-    </script>
 
     
 </body>
